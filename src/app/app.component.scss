@@ -1,0 +1,13 @@
+:host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    > header,
+    > footer {
+        background: rgb(137, 170, 98);
+        height: 100px;
+    }
+    .main {
+        flex: 1;
+    }
+}
