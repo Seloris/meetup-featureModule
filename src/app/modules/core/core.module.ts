@@ -14,6 +14,7 @@ import { UserService } from './services/user.service';
 export class CoreModule {
  }
 
+ // Uncomment this and add .forRoot in AppModule
 //  @NgModule({
 //   imports: [
 //     CommonModule
