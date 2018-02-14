@@ -17,14 +17,16 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {
     this.id = UserService.nextId++;
-    console.log('UserService.ctor called, id : ' + this.id);
+    console.log('New UserService built with id : ' + this.id);
   }
 
   public getUser(): Observable<UserResult> {
-    console.log('UserService.getUser called');
+    console.group('UserService ' + this.id);
+    console.log('getUser called');
 
     if (this.user) {
       console.log('User exists, return from cache');
+      console.groupEnd();
       return Observable.of({
         name: this.user.name,
         source: 'cache',
@@ -33,6 +35,8 @@ export class UserService {
     }
 
     console.log('Fetching user from API and saving into cache');
+    console.groupEnd();
+
     return this.fetchUserFromApi().map((userFromApi: User) => {
       this.user = userFromApi;
       return {
