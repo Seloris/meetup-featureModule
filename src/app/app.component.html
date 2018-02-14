@@ -1,10 +1,16 @@
 <header>
-  Mon header
-  <app-user [user]="user"></app-user>
+  <a mat-raised-button routerLink="." color="primary">
+    <mat-icon>home</mat-icon>
+    home
+  </a>
 </header>
 <div class="main">
   <router-outlet></router-outlet>
 </div>
 <footer>
-  Mon footer
+  <img class="ng-logo" src="assets/ng-logo.png" />
+  <div class="text">
+    <div>Angular Meetup - Feature Modules</div>
+    <div class="authors">William Klein / Daniel Djordjevic</div>
+  </div>
 </footer>

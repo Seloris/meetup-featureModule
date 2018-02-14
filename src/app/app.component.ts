@@ -8,13 +8,10 @@ import { UserService } from './modules/core/services/user.service';
 })
 export class AppComponent implements OnInit {
 
-  user: string;
-
-  constructor(private userService: UserService) {
+  constructor() {
 
   }
   ngOnInit() {
-    this.user = this.userService.getUser();
   }
 
 }

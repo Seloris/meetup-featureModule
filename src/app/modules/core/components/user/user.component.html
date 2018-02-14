@@ -1,3 +1,7 @@
-<div>
-  {{user}}
-</div>
+<pre *ngIf="user; else noUser">
+{{ user | json}}
+</pre>
+
+<ng-template #noUser>
+  <span>No user :(</span>
+</ng-template>

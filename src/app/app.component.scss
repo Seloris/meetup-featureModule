@@ -2,12 +2,31 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    > header,
-    > footer {
-        background: rgb(137, 170, 98);
-        height: 100px;
+    header,
+    footer {
+        background: #3f51b5;
+        color: white;
+        height: 66px;
+        padding: 12px;
+    }
+    footer {
+        display: flex;
+        flex-direction: row;
+        .ng-logo {
+            height: 40px;
+            background-size: cover;
+        }
+        .text {
+            text-align: end;
+            flex: 1;
+            margin-right: 12px;
+            .authors {
+                font-style: italic;
+            }
+        }
     }
     .main {
         flex: 1;
+        padding: 12px;
     }
 }
