@@ -19,7 +19,8 @@ export class CoreModule {
  // Uncomment this and add .forRoot in AppModule
 //  @NgModule({
 //   imports: [
-//     CommonModule
+//     CommonModule,
+//     HttpClientModule
 //   ],
 //   declarations: [UserComponent],
 //   exports: [UserComponent]
