@@ -10,11 +10,14 @@ import { UserResult, User } from '../../../models/user';
 
 @Injectable()
 export class UserService {
+  static nextId = 0;
 
+  private id: number;
   private user: User;
 
   constructor(private httpClient: HttpClient) {
-    console.log('UserService.ctor called');
+    this.id = UserService.nextId++;
+    console.log('UserService.ctor called, id : ' + this.id);
   }
 
   public getUser(): Observable<UserResult> {
@@ -24,7 +27,8 @@ export class UserService {
       console.log('User exists, return from cache');
       return Observable.of({
         name: this.user.name,
-        source: 'cache'
+        source: 'cache',
+        serviceId: this.id
       });
     }
 
@@ -33,7 +37,8 @@ export class UserService {
       this.user = userFromApi;
       return {
         name: this.user.name,
-        source: 'api'
+        source: 'api',
+        serviceId: this.id
       };
     });
   }
